@@ -18,34 +18,25 @@ public class DatabaseInitializer {
 
 	public static Dao db;
 	private static boolean dbconnected = false;
-
 	public static  boolean initDatabase() {
 
 		if (dbconnected == false) {
-
 			//Create database and tables if not created - skips if already exist
 			 db = new Dao();
-
 			//Connect to database
 			db = DaoHandler.connectToDb();
 			dbconnected = true;
-
 			return true;
 		}else{
 			return false;
 		}
-
 	}
 
 	public  static boolean uninitDatabase() {
-
 		if(dbconnected == true){
-
 			// Shut down connection to database
 			DaoHandler.disconnectFromDb(db);
-
 			dbconnected=false;
-
 			return true;
 		}else{
 			return false;
