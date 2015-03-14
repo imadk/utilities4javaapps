@@ -18,7 +18,6 @@ public class SerializationHandler {
 	public static class Flatten{
 		public static void run(String OUTPUT_PATH) throws IOException {
 			String filename = OUTPUT_PATH + "instance.ser";
-
 		    //replace "Instance" with your serializable class
 			Instance SI = new Instance();
 			FileOutputStream fos = null;
@@ -41,14 +40,10 @@ public class SerializationHandler {
 		}
 	}
 
-
 	public static class Inflate {
-
         //replace "Instance" with your serializable class
 		public static Instance run(String OUTPUT_PATH) {
-
 			String filename = OUTPUT_PATH + "instance.ser";
-
 		    //replace "Instance" with your serializable class
 			Instance SI = null;
 			FileInputStream fis = null;
@@ -65,11 +60,7 @@ public class SerializationHandler {
 			} catch (ClassNotFoundException ex) {
 				ex.printStackTrace();
 			}
-
-
 			return SI;
-
 		}
-
 	}
 }
