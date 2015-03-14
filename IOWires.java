@@ -31,13 +31,9 @@ public class IOWires {
 	}
 
 	private static String applicationPath = "packagename.application";
-
 	public static String getDInternalPath() {
-
 		Bundle b = Platform.getBundle(applicationPath);
-
 		URL resource;
-
 		String location = "";
 		resource = b.getEntry("/");
 		try {
@@ -46,7 +42,6 @@ public class IOWires {
 
 			e.printStackTrace();
 		}
-
 		// extract the root directory only:
 		if (exportedProduct) {
 			location = location.replaceAll(
@@ -56,26 +51,19 @@ public class IOWires {
 		} else {
 			location = location.substring(1) + "/" + "DInternal" + "/";
 		}
-
 		return location;
-
 	}
 
 	public static String getDInternalPath() {
-
 		Bundle b = Platform.getBundle(applicationPath);
-
 		URL resource;
-
 		String location = "";
 		resource = b.getEntry("/");
 		try {
 			location = FileLocator.resolve(resource).getFile();
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
-
 		// extract the root directory only:
 		if (exportedProduct) {
 			location = location.replaceAll(
@@ -85,18 +73,13 @@ public class IOWires {
 		} else {
 			location = location.substring(1) + "/" + ".DInternal" + "/";
 		}
-
 		return location;
-
 	}
 
 
 	public static String getRootPath() {
-
 		Bundle b = Platform.getBundle(applicationPath);
-
 		URL resource;
-
 		String location = "";
 		resource = b.getEntry("/");
 		try {
@@ -105,7 +88,6 @@ public class IOWires {
 
 			e.printStackTrace();
 		}
-
 		if (exportedProduct) {
 			location = location.replaceAll(
 					"plugins/" + applicationPath + ".*/", "");
@@ -114,15 +96,11 @@ public class IOWires {
 		} else {
 			location = location.substring(1);
 		}
-
 		return location;
-
 	}
 
 	public static String getLogPath(boolean exportedProduct) {
-
 		String location = "";
-
 		// extract the root directory only:
 		if (exportedProduct) {
 			location = getRootPath(exportedProduct) + "workspace/" + ".metadata/";
@@ -131,15 +109,11 @@ public class IOWires {
 			location = getRootPath(exportedProduct) + ".metadata/";
 		}
 		return location;
-
 	}
 
 	public static String getPath(String folderName) {
-
 		Bundle b = Platform.getBundle(applicationPath);
-
 		URL resource;
-
 		String location = "";
 		resource = b.getEntry("/");
 		try {
@@ -148,7 +122,6 @@ public class IOWires {
 
 			e.printStackTrace();
 		}
-
 		// extract the root directory only:
 		if (exportedProduct) {
 			location = location.replaceAll(
@@ -158,9 +131,6 @@ public class IOWires {
 		} else {
 			location = location.substring(1) + "DInternal/" + folderName + "/";
 		}
-
 		return location;
-
 	}
-
 }
