@@ -32,7 +32,7 @@ public class DatabaseInitializer {
 		}
 	}
 
-	public  static boolean uninitDatabase() {
+	public static boolean uninitDatabase() {
 		if(dbconnected == true){
 			// Shut down connection to database
 			DaoHandler.disconnectFromDb(db);
